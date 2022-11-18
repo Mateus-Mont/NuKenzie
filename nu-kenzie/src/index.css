@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+body{
+  font-family: "Nunito";
+}
+
+.list-Buttons button{
+font-family: "Nunito";
+}
+:root{
+  --white-1:#ffffff;
+  --color-1:rgb(253,55,126);
+  --color-2:rgb(3,184,152);
+  --grey-1:rgb(33,37,41);
+  --grey-2:rgb(233,236,239);
+  --grey-3:rgb(248,249,250);
+  
+  --radius-1:0.5rem;
+  --radius-2:0.25rem;
+ 
+  
+}
+button{
+  cursor: pointer;
+}

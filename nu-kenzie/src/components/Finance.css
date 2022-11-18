@@ -1,0 +1,139 @@
+.menu {
+  width: 100%;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+.menu span {
+  color: var(--color-1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container-finance {
+  width: 1200px;
+  padding-top: 40px;
+  margin: 0 auto;
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+}
+
+.container-launch {
+  width: 400px;
+}
+.container-launch form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: solid 2px rgb(238, 241, 243);
+  width: 100%;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 13px;
+  gap: 10px;
+  border-radius: var(--radius-2);
+}
+.container-launch form small {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.value div {
+  display: flex;
+  flex-direction: column;
+}
+.value {
+  display: flex;
+  justify-content: space-between;
+}
+.description {
+  width: 100%;
+  height: 52px;
+  background-color: var(--grey-3);
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  border-radius: var(--radius-1);
+}
+
+select {
+  width: 128px;
+  height: 48px;
+  margin-top: 5px;
+  background-color: var(--grey-3);
+  outline: none;
+  border: none;
+  border-radius: var(--radius-1);
+}
+.valueDescription {
+  width: 128px;
+  height: 48px;
+  margin-top: 5px;
+  background-color: var(--grey-3);
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  border-radius: var(--radius-1);
+}
+.valueDescription::placeholder {
+  padding-left: 70%;
+}
+.labelDescription{
+  font-size: 15px;
+  font-weight: 700;
+}
+label {
+  font-size: 12px;
+}
+.buttonValue {
+  height: 48px;
+  background-color: var(--color-1);
+  border: none;
+  color: var(--white-1);
+  font-size: 16px;
+  border-radius: var(--radius-1);
+}
+
+.datasFinance {
+  width: 100%;
+  height: 500px;
+}
+.datasFinance ul h4 {
+  font-size: 22px;
+  padding-top: 40px;
+}
+.button-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-header button {
+  background-color: var(--grey-2);
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-1);
+}
+.list-Buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.return {
+  background-color: var(--grey-2);
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-1);
+}
+
+.imgFinance {
+  width: 100%;
+  padding-top: 20px;
+}
