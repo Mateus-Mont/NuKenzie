@@ -1,9 +1,10 @@
 import img from "../assets/NoCard.png";
+import trash from "../assets/trash.png"
 
 export const RenderFinance = ({ prop }) => {
   return (
     <>
-      <div className="menu">
+      <header className="menu">
         <div className="header">
           <h1>
             <span>Nu</span> Kenzie
@@ -12,12 +13,14 @@ export const RenderFinance = ({ prop }) => {
             Início
           </button>
         </div>
-      </div>
+      </header>
       <div className="container-finance">
         <div className="launch">
           <div className="container-launch">
             <form action="">
-              <label className="labelDescription" htmlFor="">Descrição</label>
+              <label className="labelDescription" htmlFor="">
+                Descrição
+              </label>
               <input
                 className="description"
                 type="text"
@@ -44,6 +47,15 @@ export const RenderFinance = ({ prop }) => {
               <button className="buttonValue">Inserir Valor</button>
             </form>
           </div>
+          <div className="valueTotal">
+            <div>
+              <h3>Valor total:</h3>
+              <p>
+                <stong>$ 8456</stong>
+              </p>
+            </div>
+            <p>O valor se refere ao saldo</p>
+          </div>
         </div>
         <div className="datasFinance">
           <div>
@@ -57,8 +69,47 @@ export const RenderFinance = ({ prop }) => {
             </div>
           </div>
           <ul>
-            <h4>Você ainda não possui nenhum lançamento</h4>
-            <img className="imgFinance" src={img} alt="" />
+          <li>
+              <div className="salary">
+                <h3>Sálario-Mês Dezembro</h3>
+               <div className="divValue">
+                <p>R$ 3.660.00</p>
+                <button className="imgTrash"><img  src={trash} alt=""></img></button>
+               </div>
+              </div>
+              <p>Entrada</p>
+            </li>
+            <li>
+              <div className="salary">
+                <h3>Sálario-Mês Dezembro</h3>
+               <div className="divValue">
+                <p>R$ 2.660.00</p>
+                <button className="imgTrash"><img  src={trash} alt=""></img></button>
+               </div>
+              </div>
+              <p>Entrada</p>
+            </li>
+            <li>
+              <div className="salary">
+                <h3>Sálario-Mês Dezembro</h3>
+               <div className="divValue">
+                <p>R$ 1.660.00</p>
+                <button className="imgTrash"><img  src={trash} alt=""></img></button>
+               </div>
+              </div>
+              <p>Entrada</p>
+            </li>
+            <li>
+              <div className="salary">
+                <h3>Sálario-Mês Dezembro</h3>
+               <div className="divValue">
+                <p>R$ 6.660.00</p>
+                <button className="imgTrash"><img  src={trash} alt=""></img></button>
+               </div>
+              </div>
+              <p>Entrada</p>
+            </li>
+        
           </ul>
         </div>
       </div>

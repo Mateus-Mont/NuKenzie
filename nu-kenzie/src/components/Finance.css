@@ -49,6 +49,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .value {
   display: flex;
   justify-content: space-between;
@@ -85,7 +86,7 @@ select {
 .valueDescription::placeholder {
   padding-left: 70%;
 }
-.labelDescription{
+.labelDescription {
   font-size: 15px;
   font-weight: 700;
 }
@@ -99,6 +100,23 @@ label {
   color: var(--white-1);
   font-size: 16px;
   border-radius: var(--radius-1);
+}
+.valueTotal {
+  border-radius: var(--radius-1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: solid 2px var(--grey-2);
+  padding: 20px;
+  margin-top: 20px;
+}
+.valueTotal div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.valueTotal div p {
+  color: var(--color-1);
 }
 
 .datasFinance {
@@ -136,4 +154,92 @@ label {
 .imgFinance {
   width: 100%;
   padding-top: 20px;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+ul li {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--grey-3);
+  border-radius: var(--radius-1);
+  border-left: solid 5px var(--color-2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+ul li div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.imgTrash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: var(--grey-2);
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-2);
+}
+.imgTrash img {
+  width: 11px;
+}
+
+@media (max-width: 850px) {
+  .menu {
+    width: 100%;
+    padding: 20px;
+  }
+  .container-finance {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+  .container-launch {
+    width: 100%;
+  }
+  .container-finance form {
+    width: 100%;
+  }
+  .launch {
+    width: 100%;
+  }
+  .value div {
+    width: 150%;
+  }
+  .valueDescription {
+    width: 70%;
+  }
+  select {
+    width: 100%;
+  }
+  .button-header {
+    flex-direction: column;
+
+    gap: 30px;
+  }
+  .list-Buttons {
+    width: 100%;
+  }
+  .button-header strong {
+    width: 100%;
+  }
+  .divValue {
+    width: 100%;
+    font-size: 13px;
+  }
+  .salary h3 {
+    width: 150%;
+    font-size: 13px;
+  }
 }

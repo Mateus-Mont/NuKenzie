@@ -42,3 +42,29 @@
   cursor: pointer;
   border-radius: 8px;
 }
+
+@media (max-width: 850px) {
+  .divImg {
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+  .slogan {
+    width: 100%;
+
+    align-items: center;
+  }
+  .slogan h1{
+    text-align: center;
+    width: 70%;
+    font-size: 40px;
+  }
+  .slogan h3 {
+    font-size: 65px;
+  }
+
+  .slogan button{
+    width: 60%;
+  }
+}
