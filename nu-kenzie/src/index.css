@@ -18,7 +18,9 @@ body {
   --color-2: rgb(3, 184, 152);
   --grey-1: rgb(33, 37, 41);
   --grey-2: rgb(233, 236, 239);
+  
   --grey-3: rgb(248, 249, 250);
+  --grey-4: rgba(183, 187, 192, 0.995);
 
   --radius-1: 0.5rem;
   --radius-2: 0.25rem;

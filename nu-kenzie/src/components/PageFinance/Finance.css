@@ -142,13 +142,24 @@ label {
 .list-Buttons {
   display: flex;
   gap: 20px;
+
 }
+.list-Buttons button:hover{
+  background-color:var(--grey-4);
+  color: var(--white-1);
+}
+
+
 
 .return {
   background-color: var(--grey-2);
   border: none;
   padding: 10px 22px;
   border-radius: var(--radius-1);
+}
+.return:hover{
+ background-color: var(--grey-4);
+ color: var(--white-1);
 }
 
 .imgFinance {
