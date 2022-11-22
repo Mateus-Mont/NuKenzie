@@ -243,6 +243,7 @@ ul li div {
   }
   .list-Buttons {
     width: 100%;
+    flex-wrap: wrap;
   }
   .button-header strong {
     width: 100%;

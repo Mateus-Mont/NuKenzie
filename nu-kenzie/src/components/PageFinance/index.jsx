@@ -1,6 +1,6 @@
-import img from "../../assets/NoCard.png";
 import trash from "../../assets/trash.png";
 import { useState } from "react";
+import { Blank } from "../blank";
 
 export const RenderFinance = ({ prop }) => {
   const [descriptionFinance, setDescription] = useState("");
@@ -23,6 +23,7 @@ export const RenderFinance = ({ prop }) => {
     setDescription("");
     setValue("");
     setType("");
+    setFilter(finance);
   }
 
   function todos() {
@@ -111,9 +112,7 @@ export const RenderFinance = ({ prop }) => {
             <div className="button-header">
               <strong>Resumo financeiro</strong>
               <div className="list-Buttons">
-                <button security="Kkk" onClick={todos}>
-                  Todos
-                </button>
+                <button onClick={todos}>Todos</button>
                 <button
                   onClick={() => {
                     setFilter(
@@ -134,7 +133,7 @@ export const RenderFinance = ({ prop }) => {
             </div>
           </div>
           <ul>
-            <Render filter={filter} />
+            <Render filter={filter} finance={finance} />
           </ul>
         </div>
       </div>
@@ -142,31 +141,29 @@ export const RenderFinance = ({ prop }) => {
   );
 };
 
-const Render = ({ filter }) => {
-  if (filter.length === 0) {
+const Render = ({ filter,finance }) => {
+  console.log(finance)
+  if (finance.length === 0) {
+   return  <Blank />;
+  } 
     return (
       <>
-        <h3>Você não possui nenhum lançamento</h3>
-        <img src={img} alt="" />
+        {filter.map((elem, index) => (
+
+          <li key={index} >
+            <div className="salary">
+              <h3>{elem.description}</h3>
+              <div className="divValue">
+                <p>R$ {elem.value}</p>
+                <button className="imgTrash">
+                  <img value={elem.value} src={trash} alt=""></img>
+                </button>
+              </div>
+            </div>
+            <p>{elem.type}</p>
+          </li>
+        ))}
       </>
     );
-  }
-  return (
-    <>
-      {filter.map((elem, index) => (
-        <li key={index}>
-          <div className="salary">
-            <h3>{elem.description}</h3>
-            <div className="divValue">
-              <p>R$ {elem.value}</p>
-              <button className="imgTrash">
-                <img value={elem.value} src={trash} alt=""></img>
-              </button>
-            </div>
-          </div>
-          <p>{elem.type}</p>
-        </li>
-      ))}
-    </>
-  );
+  
 };
