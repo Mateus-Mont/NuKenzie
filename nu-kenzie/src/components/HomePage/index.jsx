@@ -1,5 +1,5 @@
-import "./homeStyles.css";
-import img from "../assets/illustration.png";
+
+import img from "../../assets/illustration.png"
 
 export const RenderHome = ({ prop }) => {
   return (

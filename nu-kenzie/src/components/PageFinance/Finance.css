@@ -154,6 +154,7 @@ label {
 .imgFinance {
   width: 100%;
   padding-top: 20px;
+
 }
 ul {
   display: flex;
@@ -161,6 +162,7 @@ ul {
   gap: 20px;
   padding-top: 40px;
   padding-bottom: 30px;
+  height: 100%;
 }
 
 ul li {
@@ -194,7 +196,7 @@ ul li div {
   width: 11px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1300px) {
   .menu {
     width: 100%;
     padding: 20px;
@@ -243,3 +245,4 @@ ul li div {
     font-size: 13px;
   }
 }
+
