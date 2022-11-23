@@ -144,7 +144,7 @@ label {
   gap: 20px;
 
 }
-.list-Buttons button:hover{
+.ativo,.list-Buttons button:hover{
   background-color:var(--grey-4);
   color: var(--white-1);
 }

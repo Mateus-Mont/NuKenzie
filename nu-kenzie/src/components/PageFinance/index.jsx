@@ -1,12 +1,15 @@
-import trash from "../../assets/trash.png";
 import { useState } from "react";
-import { Blank } from "../blank";
+import { ListFinance } from "./ListFinance";
+import { Header } from "./Header";
+import { ValueTotal } from "./ValueTotal";
+import { SelectType } from "./SelectType";
+import { InputDescription } from "./InputDescription";
+import { InputValue } from "./InputValue";
 
 export const RenderFinance = ({ prop }) => {
   const [descriptionFinance, setDescription] = useState("");
   const [valueFinance, setValue] = useState("");
   const [typeFinance, setType] = useState("");
-
   const [finance, setFinance] = useState([]);
   const [filter, setFilter] = useState(finance);
   const item = {
@@ -33,15 +36,9 @@ export const RenderFinance = ({ prop }) => {
   return (
     <>
       <header className="menu">
-        <div className="header">
-          <h1>
-            <span>Nu</span> Kenzie
-          </h1>
-          <button onClick={() => prop(true)} className="return">
-            Início
-          </button>
-        </div>
+        <Header prop={prop} />
       </header>
+
       <div className="container-finance">
         <div className="launch">
           <div className="container-launch">
@@ -49,40 +46,21 @@ export const RenderFinance = ({ prop }) => {
               <label className="labelDescription" htmlFor="">
                 Descrição
               </label>
-              <input
-                value={descriptionFinance}
-                required
-                onChange={(event) => setDescription(event.target.value)}
-                className="description"
-                type="text"
-                placeholder="Digite aqui sua descrição"
+
+              <InputDescription
+                descriptionFinance={descriptionFinance}
+                setDescription={setDescription}
               />
+
               <small>Ex: Compra de roupas</small>
               <div className="value">
                 <div>
                   <label htmlFor="">Valor</label>
-                  <input
-                    value={valueFinance}
-                    required
-                    onChange={(event) => setValue(parseInt(event.target.value))}
-                    placeholder="R$"
-                    className="valueDescription"
-                    type="number"
-                  />
+                  <InputValue valueFinance={valueFinance} setValue={setValue} />
                 </div>
                 <div>
                   <label htmlFor="">Tipo de valor</label>
-                  <select
-                    value={typeFinance}
-                    required
-                    onChange={(event) => setType(event.target.value)}
-                  >
-                    <option value="" hidden>
-                      Selecionar
-                    </option>
-                    <option value="Saída">Saída</option>;
-                    <option value="Entrada">Entrada</option>
-                  </select>
+                  <SelectType typeFinance={typeFinance} setType={setType} />
                 </div>
               </div>
               <button className="buttonValue">Inserir Valor</button>
@@ -93,14 +71,7 @@ export const RenderFinance = ({ prop }) => {
               <h3>Valor total:</h3>
               <p>
                 <strong>
-                  ${" "}
-                  {finance.reduce((antes, depois) => {
-                    if (depois.type === "Entrada") {
-                      return antes + depois.value;
-                    } else {
-                      return antes - depois.value;
-                    }
-                  }, 0)}
+                  <ValueTotal finance={finance} />
                 </strong>
               </p>
             </div>
@@ -133,37 +104,10 @@ export const RenderFinance = ({ prop }) => {
             </div>
           </div>
           <ul>
-            <Render filter={filter} finance={finance} />
+            <ListFinance filter={filter} finance={finance} />
           </ul>
         </div>
       </div>
     </>
   );
-};
-
-const Render = ({ filter,finance }) => {
-  console.log(finance)
-  if (finance.length === 0) {
-   return  <Blank />;
-  } 
-    return (
-      <>
-        {filter.map((elem, index) => (
-
-          <li key={index} >
-            <div className="salary">
-              <h3>{elem.description}</h3>
-              <div className="divValue">
-                <p>R$ {elem.value}</p>
-                <button className="imgTrash">
-                  <img value={elem.value} src={trash} alt=""></img>
-                </button>
-              </div>
-            </div>
-            <p>{elem.type}</p>
-          </li>
-        ))}
-      </>
-    );
-  
 };
