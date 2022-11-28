@@ -8,7 +8,7 @@ const ValueTotal = ({finance}) => {
         } else {
           return antes - depois.value;
         }
-      }, 0)}
+      }, 0).toFixed(2)}
     </>
   );
 };

@@ -142,14 +142,12 @@ label {
 .list-Buttons {
   display: flex;
   gap: 20px;
-
 }
-.ativo,.list-Buttons button:hover{
-  background-color:var(--grey-4);
+.ativo,
+.list-Buttons button:hover {
+  background-color: var(--grey-4);
   color: var(--white-1);
 }
-
-
 
 .return {
   background-color: var(--grey-2);
@@ -157,15 +155,14 @@ label {
   padding: 10px 22px;
   border-radius: var(--radius-1);
 }
-.return:hover{
- background-color: var(--grey-4);
- color: var(--white-1);
+.return:hover {
+  background-color: var(--grey-4);
+  color: var(--white-1);
 }
 
 .imgFinance {
   width: 100%;
   padding-top: 20px;
-
 }
 ul {
   display: flex;
@@ -192,6 +189,12 @@ ul li div {
   justify-content: space-between;
   gap: 20px;
   align-items: center;
+}
+.trash {
+  width: 20px;
+  background-color: var(--grey-2);
+  padding: 5px;
+  cursor: pointer;
 }
 .imgTrash {
   display: flex;
@@ -257,4 +260,3 @@ ul li div {
     font-size: 13px;
   }
 }
-

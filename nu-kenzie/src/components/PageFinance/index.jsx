@@ -1,22 +1,28 @@
 import { useState } from "react";
-import { ListFinance } from "./ListFinance";
+import { Filter, Filtrar, ListFinance } from "./ListFinance";
 import { Header } from "./Header";
 import { ValueTotal } from "./ValueTotal";
 import { SelectType } from "./SelectType";
 import { InputDescription } from "./InputDescription";
 import { InputValue } from "./InputValue";
+import { Blank } from "./blank";
 
 export const RenderFinance = ({ prop }) => {
+  
   const [descriptionFinance, setDescription] = useState("");
   const [valueFinance, setValue] = useState("");
   const [typeFinance, setType] = useState("");
   const [finance, setFinance] = useState([]);
-  const [filter, setFilter] = useState(finance);
+  const [filter, setFilter] = useState([]);
+ 
+  
   const item = {
+    id:finance.length,
     description: descriptionFinance,
     value: valueFinance,
     type: typeFinance,
   };
+
 
   function submit(event) {
     event.preventDefault();
@@ -104,7 +110,7 @@ export const RenderFinance = ({ prop }) => {
             </div>
           </div>
           <ul>
-            <ListFinance filter={filter} finance={finance} />
+          {finance.length===0? <Blank/>:  <ListFinance filter={filter} finance={finance} setFinance={setFinance} />  }
           </ul>
         </div>
       </div>

@@ -1,21 +1,29 @@
 import { Blank } from "./blank.jsx";
 import trash from "../../assets/trash.png";
 
-const ListFinance = ({ filter, finance }) => {
-  if (finance.length === 0) {
-    return <Blank />;
+const ListFinance = ({ filter, finance, setFinance }) => {
+  function remove(elem) {
+    let financeFiltered = finance.filter((finance) => {
+      return finance.id !== elem.id;
+    });
+    setFinance(financeFiltered);
   }
+
   return (
     <>
-      {filter.map((elem, index) => (
+      {finance.map((elem, index) => (
         <li key={index}>
           <div className="salary">
             <h3>{elem.description}</h3>
             <div className="divValue">
-              <p>R$ {elem.value}</p>
-              <button className="imgTrash">
-                <img value={elem.value} src={trash} alt=""></img>
-              </button>
+              <p>R$ {elem.value.toFixed(2)}</p>
+
+              <img
+                className="trash"
+                onClick={() => remove(elem)}
+                src={trash}
+                alt=""
+              ></img>
             </div>
           </div>
           <p>{elem.type}</p>
