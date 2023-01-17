@@ -248,5 +248,6 @@ ul li div {
   .salary h3 {
     width: 150%;
     font-size: 13px;
+    background-color:#3333;
   }
 }

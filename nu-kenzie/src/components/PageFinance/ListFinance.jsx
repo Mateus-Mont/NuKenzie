@@ -1,18 +1,22 @@
 import { Blank } from "./blank.jsx";
 import trash from "../../assets/trash.png";
 
-const ListFinance = ({ filter, finance, setFinance }) => {
+const ListFinance = ({ filter, finance, setFilter, setFinance }) => {
+  console.log(filter)
+  console.log(finance)
+
   function remove(elem) {
     let financeFiltered = finance.filter((finance) => {
       return finance.id !== elem.id;
     });
     setFinance(financeFiltered);
+    setFilter(financeFiltered)
   }
 
   return (
     <>
-      {finance.map((elem, index) => (
-        <li key={index}>
+      {filter.map((elem, index) => (
+        <li key={index} >
           <div className="salary">
             <h3>{elem.description}</h3>
             <div className="divValue">

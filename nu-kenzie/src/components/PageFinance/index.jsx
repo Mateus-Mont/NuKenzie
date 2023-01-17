@@ -32,12 +32,16 @@ export const RenderFinance = ({ prop }) => {
     setDescription("");
     setValue("");
     setType("");
-    setFilter(finance);
+    setFilter((oldFinances) => {
+      return [...oldFinances, item];
+    });
   }
 
   function todos() {
     return setFilter(finance);
   }
+
+  
 
   return (
     <>
@@ -110,7 +114,7 @@ export const RenderFinance = ({ prop }) => {
             </div>
           </div>
           <ul>
-          {finance.length===0? <Blank/>:  <ListFinance filter={filter} finance={finance} setFinance={setFinance} />  }
+          {filter.length===0? <Blank/>:  <ListFinance filter={filter} finance={finance} setFilter={setFilter} setFinance={setFinance} />  }
           </ul>
         </div>
       </div>
