@@ -16,7 +16,7 @@ const ListFinance = ({ filter, finance, setFilter, setFinance }) => {
   return (
     <>
       {filter.map((elem, index) => (
-        <li key={index} >
+        <li className={`${elem.type=== "Saída" && "valueExpense"}`} key={index} >
           <div className="salary">
             <h3>{elem.description}</h3>
             <div className="divValue">

@@ -8,21 +8,19 @@ import { InputValue } from "./InputValue";
 import { Blank } from "./blank";
 
 export const RenderFinance = ({ prop }) => {
-  
   const [descriptionFinance, setDescription] = useState("");
   const [valueFinance, setValue] = useState("");
   const [typeFinance, setType] = useState("");
   const [finance, setFinance] = useState([]);
   const [filter, setFilter] = useState([]);
- 
-  
+  const [colorFilter, setColorFilter] = useState(null);
+
   const item = {
-    id:finance.length,
+    id: finance.length,
     description: descriptionFinance,
     value: valueFinance,
     type: typeFinance,
   };
-
 
   function submit(event) {
     event.preventDefault();
@@ -38,10 +36,9 @@ export const RenderFinance = ({ prop }) => {
   }
 
   function todos() {
+    setColorFilter(null);
     return setFilter(finance);
   }
-
-  
 
   return (
     <>
@@ -93,9 +90,16 @@ export const RenderFinance = ({ prop }) => {
             <div className="button-header">
               <strong>Resumo financeiro</strong>
               <div className="list-Buttons">
-                <button onClick={todos}>Todos</button>
                 <button
+                  className={`${colorFilter === null && "login-btn"}`}
+                  onClick={todos}
+                >
+                  Todos
+                </button>
+                <button
+                  className={`${colorFilter && "login-btn"}`}
                   onClick={() => {
+                    setColorFilter(true);
                     setFilter(
                       finance.filter((elem) => elem.type === "Entrada")
                     );
@@ -104,7 +108,9 @@ export const RenderFinance = ({ prop }) => {
                   Entradas
                 </button>
                 <button
+                  className={`${colorFilter === false && "login-btn"}`}
                   onClick={() => {
+                    setColorFilter(false);
                     setFilter(finance.filter((elem) => elem.type === "Saída"));
                   }}
                 >
@@ -114,7 +120,16 @@ export const RenderFinance = ({ prop }) => {
             </div>
           </div>
           <ul>
-          {filter.length===0? <Blank/>:  <ListFinance filter={filter} finance={finance} setFilter={setFilter} setFinance={setFinance} />  }
+            {filter.length === 0 ? (
+              <Blank />
+            ) : (
+              <ListFinance
+                filter={filter}
+                finance={finance}
+                setFilter={setFilter}
+                setFinance={setFinance}
+              />
+            )}
           </ul>
         </div>
       </div>
