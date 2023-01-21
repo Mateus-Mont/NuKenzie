@@ -144,7 +144,7 @@ label {
   gap: 20px;
 }
 
-button.login-btn {
+button.buttonFiltered {
   color: var(--white-1);
   background-color: var(--color-1);
 }
@@ -184,7 +184,7 @@ ul li {
   flex-direction: column;
   gap: 20px;
 }
-.valueExpense{
+.valueExpense {
   border-left: solid 5px var(--color-1);
 }
 ul li div {
@@ -243,12 +243,12 @@ ul li div {
     width: 100%;
   }
   .divValue {
-    width: 100%;
+    display: flex;
+    gap: 60px;
     font-size: 13px;
   }
   .salary h3 {
-    width: 150%;
+    width: auto;
     font-size: 13px;
-    background-color: #3333;
   }
 }

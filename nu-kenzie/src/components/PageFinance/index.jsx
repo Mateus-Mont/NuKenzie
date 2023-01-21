@@ -13,7 +13,7 @@ export const RenderFinance = ({ prop }) => {
   const [typeFinance, setType] = useState("");
   const [finance, setFinance] = useState([]);
   const [filter, setFilter] = useState([]);
-  const [colorFilter, setColorFilter] = useState(null);
+  const [colorFilter, setColorFilter] = useState("Todos");
 
   const item = {
     id: finance.length,
@@ -36,7 +36,7 @@ export const RenderFinance = ({ prop }) => {
   }
 
   function todos() {
-    setColorFilter(null);
+    setColorFilter("Todos");
     return setFilter(finance);
   }
 
@@ -91,15 +91,15 @@ export const RenderFinance = ({ prop }) => {
               <strong>Resumo financeiro</strong>
               <div className="list-Buttons">
                 <button
-                  className={`${colorFilter === null && "login-btn"}`}
+                  className={`${colorFilter === "Todos" && "buttonFiltered"}`}
                   onClick={todos}
                 >
                   Todos
                 </button>
                 <button
-                  className={`${colorFilter && "login-btn"}`}
+                  className={`${colorFilter==="Entrada" && "buttonFiltered"}`}
                   onClick={() => {
-                    setColorFilter(true);
+                    setColorFilter("Entrada");
                     setFilter(
                       finance.filter((elem) => elem.type === "Entrada")
                     );
@@ -108,9 +108,9 @@ export const RenderFinance = ({ prop }) => {
                   Entradas
                 </button>
                 <button
-                  className={`${colorFilter === false && "login-btn"}`}
+                  className={`${colorFilter === "Saída" && "buttonFiltered"}`}
                   onClick={() => {
-                    setColorFilter(false);
+                    setColorFilter("Saída");
                     setFilter(finance.filter((elem) => elem.type === "Saída"));
                   }}
                 >
